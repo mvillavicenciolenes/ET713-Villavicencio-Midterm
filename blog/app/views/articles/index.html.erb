@@ -1,3 +1,185 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>W3.CSS Template</title>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Raleway">
+<style>
+body,h1,h2,h3,h4,h5 {font-family: "Raleway", sans-serif}
+</style>
+</head>
+<body class="w3-light-grey">
+
+<!-- w3-content defines a container for fixed size centered content, 
+and is wrapped around the whole page content, except for the footer in this example -->
+<div class="w3-content" style="max-width:1400px">
+
+<!-- Header -->
+<header class="w3-container w3-center w3-padding-32"> 
+  <h1><b>MY BLOG</b></h1>
+  <p>Welcome to the blog of <span class="w3-tag">Working with Rails</span></p>
+</header>
+
+<!-- Grid -->
+<div class="w3-row">
+
+<!-- Blog entries -->
+<div class="w3-col l8 s12">
+  <!-- Blog entry -->
+<div class="w3-card-4 w3-margin w3-white">
+    <img src="https://www.w3schools.com/w3images/woods.jpg" alt="Nature" style="width:100%">
+    <div class="w3-container">
+        <h3><b>Working with AWS to create the Blog</b></h3>
+        <!-- Here, I am inserting a span to display the current date and time -->
+        <h5>Title description, <span class="w3-opacity" id="realtime">Loading date and time...</span></h5>
+    </div>
+
+    <div class="w3-container">
+        <p>I was able to create this Blog exercise using AWS as a tool to create my environment.</p>
+        <div class="w3-row">
+            <div class="w3-col m8 s12">
+                <p><button class="w3-button w3-padding-large w3-white w3-border"><b>READ MORE »</b></button></p>
+            </div>
+            <div class="w3-col m4 w3-hide-small">
+                <p><span class="w3-padding-large w3-right"><b>Comments  </b> <span class="w3-tag">0</span></span></p>
+            </div>
+        </div>
+    </div>
+</div>
+
+<script>
+function updateDateTime() {
+    var now = new Date();
+    var dateString = now.toLocaleDateString(undefined, { year: 'numeric', month: 'long', day: 'numeric' });
+    var timeString = now.toLocaleTimeString();
+    document.getElementById('realtime').textContent = dateString + ' ' + timeString;
+}
+
+// Update the date and time every second
+setInterval(updateDateTime, 1000);
+</script>
+
+  <hr>
+
+  <!-- Blog entry -->
+  <div class="w3-card-4 w3-margin w3-white">
+  <img src="https://www.w3schools.com/w3images/bridge.jpg" alt="Norway" style="width:100%">
+    <div class="w3-container">
+      <h3><b>BLOG ENTRY</b></h3>
+      <h5>Title description, <span class="w3-opacity">April 2, 2014</span></h5>
+    </div>
+
+    <div class="w3-container">
+    <p>In learning Ruby on Rails, I decided to take on the challenge of building a blog, using the popular Ruby on Rails tutorial as my guide. This experience allowed me to explore the powerful features of Rails and understand its conventions, which significantly streamline the development process.</p>
+    <p>My first step was to set up the Ruby on Rails development environment. I installed Ruby, Rails, and SQLite, which would serve as the database for my application. RailsInstaller was my choice on Windows, which packaged everything I needed in one place. I chose VSCode as my code editor because of its robust features and strong support for Ruby on Rails.</p>
+    <p>With my environment ready, I initiated a new Rails project by running <code>rails new blog</code> in the command line. This command magically set up the complete structure of my new blog application, including all directories and configuration files essential for a Rails project.</p>
+    <p>Next, I generated a controller named <code>Posts</code> to manage the blog posts. This was accomplished with the command <code>rails generate controller Posts</code>. Rails automatically created not only the controller file but also views associated with each action I might need, such as displaying a list of posts or a single post.</p>
+    <p>For the blog to function, I needed a way to store and retrieve blog posts. This required setting up a model, which I called <code>Post</code>. Using the command <code>rails generate model Post title:string body:text</code>, Rails created a model along with a migration file to set up the database table. I ran <code>rails db:migrate</code> to apply this migration, which created the <code>posts</code> table in my SQLite database.</p>
+    <p>Implementing CRUD (Create, Read, Update, Delete) functionality was a core part of the tutorial. I defined routes in the <code>config/routes.rb</code> file, and implemented actions in the <code>Posts</code> controller to handle each operation. The Rails form helpers made it straightforward to create forms for new and edited posts, leveraging Rails' convention over configuration principle.</p>
+    <p>Rails' asset pipeline facilitated the addition of custom stylesheets. I added some basic CSS to enhance the layout and appearance of my blog, making it more visually appealing.</p>
+    <p>Building this blog with Ruby on Rails was an enlightening experience that deepened my understanding of web development frameworks. The conventions used by Rails, such as convention over configuration and the RESTful architecture of web applications, helped me develop a functional blog with minimal hassle. The ability to see immediate results as I learned was incredibly satisfying, and it has spurred me to dive deeper into more advanced features of Rails.</p>
+    <div class="w3-row">
+        <div class="w3-col m8 s12">
+            <p><button class="w3-button w3-padding-large w3-white w3-border"><b>READ MORE »</b></button></p>
+        </div>
+        <div class="w3-col m4 w3-hide-small">
+            <p><span class="w3-padding-large w3-right"><b>Comments  </b> <span class="w3-badge">2</span></span></p>
+        </div>
+    </div>
+</div>
+
+  </div>
+<!-- END BLOG ENTRIES -->
+</div>
+
+<!-- Introduction menu -->
+<div class="w3-col l4">
+  <!-- About Card -->
+  <div class="w3-card w3-margin w3-margin-top">
+  <img src="https://www.w3schools.com/w3images/avatar_g.jpg" style="width:100%">
+    <div class="w3-container w3-white">
+      <h4><b>Articles</b></h4>
+      <p>Find interesting articles here.</p>
+        <ul>
+          <% @articles.each do |article| %>
+            <% unless article.archived? %>
+              <li>
+                <%= link_to article.title, article %>
+              </li>
+            <% end %>
+          <% end %>
+        </ul>
+      
+    </div>
+  </div><hr>
+  
+  <!-- Posts -->
+<div class="w3-card w3-margin">
+    <div class="w3-container w3-padding">
+      <h4>Popular Posts</h4>
+    </div>
+    <ul class="w3-ul w3-hoverable w3-white">
+      <li class="w3-padding-16">
+        <img src="https://www.w3schools.com/w3images/workshop.jpg" alt="Image" class="w3-left w3-margin-right" style="width:50px">
+        <span class="w3-large"><a href="url-to-linked-content" style="text-decoration: none; color: inherit;">Tutorial link</a></span><br>
+        <span><a href="https://guides.rubyonrails.org/getting_started.html" style="text-decoration: none; color: inherit;">Follow the same tutorial I did by clicking here!!.</a></span>
+      </li>
+      </li>
+      <li class="w3-padding-16">
+        <img src="https://www.w3schools.com/w3images/gondol.jpg" alt="Image" class="w3-left w3-margin-right" style="width:50px">
+        <span class="w3-large">Download it on Mac</span><br>
+        <span><a href="https://gorails.com/setup/macos/14-sonoma" style="text-decoration: none; color: inherit;">Follow this link to intall on Mac</span>
+      </li> 
+      <li class="w3-padding-16">
+        <img src="https://www.w3schools.com/w3images/skies.jpg" alt="Image" class="w3-left w3-margin-right" style="width:50px">
+        <span class="w3-large">Download it on Windows</span><br>
+        <span><a href="https://gorails.com/setup/windows/10" style="text-decoration: none; color: inherit;">Follow this link to intall on Windows</span>
+      </li>   
+      <li class="w3-padding-16 w3-hide-medium w3-hide-small">
+        <img src="https://www.w3schools.com/w3images/rock.jpg" alt="Image" class="w3-left w3-margin-right" style="width:50px">
+        <span class="w3-large">Mingsum</span><br>
+        <span>Lorem ipsum dipsum</span>
+      </li>  
+    </ul>
+  </div>
+  <hr> 
+ 
+  <!-- Labels / tags -->
+  <div class="w3-card w3-margin">
+    <div class="w3-container w3-padding">
+      <h4>Tags</h4>
+    </div>
+    <div class="w3-container w3-white">
+    <p><span class="w3-tag w3-black w3-margin-bottom">Travel</span> <span class="w3-tag w3-light-grey w3-small w3-margin-bottom">New York</span> <span class="w3-tag w3-light-grey w3-small w3-margin-bottom">London</span>
+      <span class="w3-tag w3-light-grey w3-small w3-margin-bottom">IKEA</span> <span class="w3-tag w3-light-grey w3-small w3-margin-bottom">NORWAY</span> <span class="w3-tag w3-light-grey w3-small w3-margin-bottom">DIY</span>
+      <span class="w3-tag w3-light-grey w3-small w3-margin-bottom">Ideas</span> <span class="w3-tag w3-light-grey w3-small w3-margin-bottom">Baby</span> <span class="w3-tag w3-light-grey w3-small w3-margin-bottom">Family</span>
+      <span class="w3-tag w3-light-grey w3-small w3-margin-bottom">News</span> <span class="w3-tag w3-light-grey w3-small w3-margin-bottom">Clothing</span> <span class="w3-tag w3-light-grey w3-small w3-margin-bottom">Shopping</span>
+      <span class="w3-tag w3-light-grey w3-small w3-margin-bottom">Sports</span> <span class="w3-tag w3-light-grey w3-small w3-margin-bottom">Games</span>
+    </p>
+    </div>
+  </div>
+  
+<!-- END Introduction Menu -->
+</div>
+
+<!-- END GRID -->
+</div><br>
+
+<!-- END w3-content -->
+</div>
+
+<!-- Footer -->
+<footer class="w3-container w3-dark-grey w3-padding-32 w3-margin-top">
+  <button class="w3-button w3-black w3-disabled w3-padding-large w3-margin-bottom">Previous</button>
+  <button class="w3-button w3-black w3-padding-large w3-margin-bottom">Next »</button>
+  <p>Powered by <a href="https://www.w3schools.com/w3css/default.asp" target="_blank">w3.css</a></p>
+</footer>
+
+</body>
+</html>
+
 <h1>Hello, Rails!</h1>
 <h1>Articles</h1>
 
