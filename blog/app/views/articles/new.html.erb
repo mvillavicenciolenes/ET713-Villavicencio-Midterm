@@ -1,6 +1,61 @@
-<h1>New Article after completing 7.4</h1>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Create Article</title>
+    <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+    <style>
+        html, body {
+            height: 100%; /* Ensure full height */
+            margin: 0;
+            font-family: 'Raleway', sans-serif;
+            color: white;
+        }
+        body {
+            display: flex;
+            flex-direction: column; /* Stack children vertically */
+        }
+        .content-container {
+            flex: 1; /* Takes up the remaining space */
+            background-color: rgba(0, 0, 0, 0.5); /* Semi-transparent background */
+            padding: 32px;
+            background: url('https://images.pexels.com/photos/4004376/pexels-photo-4004376.jpeg') no-repeat center center fixed; /* Example direct image URL */
+            background-size: cover;
+        }
+        .header {
+            text-align: center;
+        }
+        footer {
+            padding: 32px;
+            background-color: #333; /* Dark footer for better contrast */
+        }
+        .w3-button {
+            background-color: black;
+            border: none;
+            color: white;
+        }
+    </style>
+</head>
+<body>
+    <div class="content-container">
+        <!-- Header/Home -->
+        <header class="w3-container header">
+            <h1 class="w3-jumbo">Creating Articles</h1>
+            <p>Unleash your Creativity!</p>
+        </header>
 
-<h1>New Article</h1>
-
-<%= render "form", article: @article %>
-
+        <!-- Create New Article Section -->
+        <div class="w3-container">
+            <h1>Create a New Article</h1>
+            <!-- The form part is a server-side code snippet and will render a form for an article -->
+            <%= render "form", article: @article %>
+        </div>
+    </div>
+    <!-- Footer always pushed to the bottom -->
+    <footer class="w3-container w3-dark-grey">
+        <!-- Button to go back to the home page or previous page -->
+        <button class="w3-button" onclick="history.back();">Home Page</button>
+    </footer>
+</body>
+</html>
