@@ -1088,3 +1088,143 @@ Processing by ArticlesController#index as HTML
 Completed 200 OK in 88ms (Views: 74.0ms | ActiveRecord: 2.1ms | Allocations: 20564)
 
 
+Started GET "/articles/2" for 146.111.195.30 at 2024-04-18 20:54:39 +0000
+Cannot render console from 146.111.195.30! Allowed networks: 127.0.0.0/127.255.255.255, ::1
+Processing by ArticlesController#show as HTML
+  Parameters: {"id"=>"2"}
+  [1m[36mArticle Load (0.1ms)[0m  [1m[34mSELECT "articles".* FROM "articles" WHERE "articles"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/articles_controller.rb:7:in `show'
+  Rendering layout layouts/application.html.erb
+  Rendering articles/show.html.erb within layouts/application
+  Rendered articles/show.html.erb within layouts/application (Duration: 0.7ms | Allocations: 295)
+  Rendered layout layouts/application.html.erb (Duration: 28.8ms | Allocations: 14872)
+Completed 200 OK in 51ms (Views: 33.4ms | ActiveRecord: 5.1ms | Allocations: 20565)
+
+
+Started GET "/articles/2/edit" for 146.111.195.30 at 2024-04-18 20:54:40 +0000
+Cannot render console from 146.111.195.30! Allowed networks: 127.0.0.0/127.255.255.255, ::1
+Processing by ArticlesController#edit as HTML
+  Parameters: {"id"=>"2"}
+  [1m[36mArticle Load (0.1ms)[0m  [1m[34mSELECT "articles".* FROM "articles" WHERE "articles"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/articles_controller.rb:25:in `edit'
+  Rendering layout layouts/application.html.erb
+  Rendering articles/edit.html.erb within layouts/application
+  Rendered articles/_form.html.erb (Duration: 3.1ms | Allocations: 1198)
+  Rendered articles/edit.html.erb within layouts/application (Duration: 6.6ms | Allocations: 1431)
+  Rendered layout layouts/application.html.erb (Duration: 10.2ms | Allocations: 2540)
+Completed 200 OK in 21ms (Views: 13.3ms | ActiveRecord: 0.1ms | Allocations: 3204)
+
+
+Started PATCH "/articles/2" for 146.111.195.30 at 2024-04-18 20:58:00 +0000
+Cannot render console from 146.111.195.30! Allowed networks: 127.0.0.0/127.255.255.255, ::1
+Processing by ArticlesController#update as TURBO_STREAM
+  Parameters: {"authenticity_token"=>"[FILTERED]", "article"=>{"title"=>"The Rise of Remote Work: Transforming Modern Workplaces", "body"=>"The global landscape of work underwent a dramatic transformation with the onset of the COVID-19 pandemic, which accelerated the shift towards remote work. As businesses scrambled to adapt to new safety regulations, they discovered the myriad benefits of allowing employees to work from home. This transition has not only changed where we work but also how work is perceived and conducted.\n\nFlexibility and Productivity\nOne of the most significant benefits of remote work is the flexibility it offers. Employees can manage their schedules with greater autonomy, often leading to increased job satisfaction and productivity. Studies have shown that without the commute and the structured environment of an office, many find it easier to focus and complete tasks more efficiently. Companies are now reevaluating the necessity of physical office spaces, with some opting to reduce their real estate footprint as a cost-saving measure.\n\nTechnological Advancements and Challenges\nRemote work is heavily reliant on technology, from cloud-based platforms for collaboration and communication to project management tools that help teams stay organized. The rapid adoption of these technologies has facilitated smoother transitions for companies moving online. However, this dependency also brings challenges. Cybersecurity has become a top concern as the boundaries between work and personal spaces blur, increasing the risk of data breaches.\n\nCultural Shifts and Employee Well-being\nThe shift to remote work has prompted a cultural reset in many organizations. The emphasis on work-life balance has become more pronounced, with companies instituting policies aimed at reducing burnout and promoting mental health. Regular virtual check-ins and team-building activities have become commonplace to maintain team cohesion and ensure that employees feel connected and valued.\n\nFuture Outlook\nAs we look to the future, it's clear that remote work is here to stay in some form. While some companies may return to fully in-office models, many will adopt a hybrid approach, combining remote and in-office days to balance flexibility with the need for in-person collaboration. This new normal promises to reshape not just our workplaces but also our cities and communities, potentially leading to a more balanced and fulfilling way of life.\n\nRemote work represents a significant shift in our approach to employment, offering both challenges and opportunities. How we navigate this change will shape the future of work for generations to come."}, "commit"=>"Update Article", "id"=>"2"}
+  [1m[36mArticle Load (0.1ms)[0m  [1m[34mSELECT "articles".* FROM "articles" WHERE "articles"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/articles_controller.rb:29:in `update'
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/articles_controller.rb:31:in `update'
+  [1m[36mArticle Update (3.8ms)[0m  [1m[33mUPDATE "articles" SET "title" = ?, "body" = ?, "updated_at" = ? WHERE "articles"."id" = ?[0m  [["title", "The Rise of Remote Work: Transforming Modern Workplaces"], ["body", "The global landscape of work underwent a dramatic transformation with the onset of the COVID-19 pandemic, which accelerated the shift towards remote work. As businesses scrambled to adapt to new safety regulations, they discovered the myriad benefits of allowing employees to work from home. This transition has not only changed where we work but also how work is perceived and conducted.\n\nFlexibility and Productivity\nOne of the most significant benefits of remote work is the flexibility it offers. Employees can manage their schedules with greater autonomy, often leading to increased job satisfaction and productivity. Studies have shown that without the commute and the structured environment of an office, many find it easier to focus and complete tasks more efficiently. Companies are now reevaluating the necessity of physical office spaces, with some opting to reduce their real estate footprint as a cost-saving measure.\n\nTechnological Advancements and Challenges\nRemote work is heavily reliant on technology, from cloud-based platforms for collaboration and communication to project management tools that help teams stay organized. The rapid adoption of these technologies has facilitated smoother transitions for companies moving online. However, this dependency also brings challenges. Cybersecurity has become a top concern as the boundaries between work and personal spaces blur, increasing the risk of data breaches.\n\nCultural Shifts and Employee Well-being\nThe shift to remote work has prompted a cultural reset in many organizations. The emphasis on work-life balance has become more pronounced, with companies instituting policies aimed at reducing burnout and promoting mental health. Regular virtual check-ins and team-building activities have become commonplace to maintain team cohesion and ensure that employees feel connected and valued.\n\nFuture Outlook\nAs we look to the future, it's clear that remote work is here to stay in some form. While some companies may return to fully in-office models, many will adopt a hybrid approach, combining remote and in-office days to balance flexibility with the need for in-person collaboration. This new normal promises to reshape not just our workplaces but also our cities and communities, potentially leading to a more balanced and fulfilling way of life.\n\nRemote work represents a significant shift in our approach to employment, offering both challenges and opportunities. How we navigate this change will shape the future of work for generations to come."], ["updated_at", "2024-04-18 20:58:00.203000"], ["id", 2]]
+  ↳ app/controllers/articles_controller.rb:31:in `update'
+  [1m[36mTRANSACTION (2.0ms)[0m  [1m[36mcommit transaction[0m
+  ↳ app/controllers/articles_controller.rb:31:in `update'
+Redirected to https://ce91869187c447819ee1ffb107d7c008.vfs.cloud9.us-east-1.amazonaws.com/articles/2
+Completed 302 Found in 31ms (ActiveRecord: 7.7ms | Allocations: 7310)
+
+
+Started GET "/articles/2" for 146.111.195.30 at 2024-04-18 20:58:00 +0000
+Cannot render console from 146.111.195.30! Allowed networks: 127.0.0.0/127.255.255.255, ::1
+Processing by ArticlesController#show as TURBO_STREAM
+  Parameters: {"id"=>"2"}
+  [1m[36mArticle Load (0.1ms)[0m  [1m[34mSELECT "articles".* FROM "articles" WHERE "articles"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/articles_controller.rb:7:in `show'
+  Rendering layout layouts/application.html.erb
+  Rendering articles/show.html.erb within layouts/application
+  Rendered articles/show.html.erb within layouts/application (Duration: 70.8ms | Allocations: 14465)
+  Rendered layout layouts/application.html.erb (Duration: 99.8ms | Allocations: 28797)
+Completed 200 OK in 108ms (Views: 104.8ms | ActiveRecord: 0.5ms | Allocations: 30075)
+
+
+Started GET "/" for 146.111.195.30 at 2024-04-18 20:58:08 +0000
+Cannot render console from 146.111.195.30! Allowed networks: 127.0.0.0/127.255.255.255, ::1
+Processing by ArticlesController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering articles/index.html.erb within layouts/application
+  [1m[36mArticle Load (0.2ms)[0m  [1m[34mSELECT "articles".* FROM "articles"[0m
+  ↳ app/views/articles/index.html.erb:5
+  Rendered articles/index.html.erb within layouts/application (Duration: 5.3ms | Allocations: 712)
+  Rendered layout layouts/application.html.erb (Duration: 9.9ms | Allocations: 2035)
+Completed 200 OK in 20ms (Views: 19.7ms | ActiveRecord: 0.2ms | Allocations: 2359)
+
+
+Started GET "/" for 146.111.195.30 at 2024-04-18 21:00:39 +0000
+Cannot render console from 146.111.195.30! Allowed networks: 127.0.0.0/127.255.255.255, ::1
+Processing by ArticlesController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering articles/index.html.erb within layouts/application
+  [1m[36mArticle Load (0.1ms)[0m  [1m[34mSELECT "articles".* FROM "articles"[0m
+  ↳ app/views/articles/index.html.erb:5
+  Rendered articles/index.html.erb within layouts/application (Duration: 13.5ms | Allocations: 3569)
+  Rendered layout layouts/application.html.erb (Duration: 43.8ms | Allocations: 18137)
+Completed 200 OK in 52ms (Views: 43.6ms | ActiveRecord: 5.2ms | Allocations: 20109)
+
+
+Started GET "/articles/2" for 146.111.195.30 at 2024-04-18 21:00:41 +0000
+Cannot render console from 146.111.195.30! Allowed networks: 127.0.0.0/127.255.255.255, ::1
+Processing by ArticlesController#show as HTML
+  Parameters: {"id"=>"2"}
+  [1m[36mArticle Load (0.2ms)[0m  [1m[34mSELECT "articles".* FROM "articles" WHERE "articles"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/articles_controller.rb:7:in `show'
+  Rendering layout layouts/application.html.erb
+  Rendering articles/show.html.erb within layouts/application
+  [1m[36mComment Load (0.1ms)[0m  [1m[34mSELECT "comments".* FROM "comments" WHERE "comments"."article_id" = ?[0m  [["article_id", 2]]
+  ↳ app/views/articles/show.html.erb:15
+  Rendered articles/show.html.erb within layouts/application (Duration: 16.3ms | Allocations: 7193)
+  Rendered layout layouts/application.html.erb (Duration: 22.4ms | Allocations: 8303)
+Completed 200 OK in 32ms (Views: 25.4ms | ActiveRecord: 0.6ms | Allocations: 9590)
+
+
+Started GET "/articles/2/edit" for 146.111.195.30 at 2024-04-18 21:00:43 +0000
+Cannot render console from 146.111.195.30! Allowed networks: 127.0.0.0/127.255.255.255, ::1
+Processing by ArticlesController#edit as HTML
+  Parameters: {"id"=>"2"}
+  [1m[36mArticle Load (0.1ms)[0m  [1m[34mSELECT "articles".* FROM "articles" WHERE "articles"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/articles_controller.rb:25:in `edit'
+  Rendering layout layouts/application.html.erb
+  Rendering articles/edit.html.erb within layouts/application
+  Rendered articles/_form.html.erb (Duration: 3.2ms | Allocations: 1134)
+  Rendered articles/edit.html.erb within layouts/application (Duration: 5.8ms | Allocations: 1367)
+  Rendered layout layouts/application.html.erb (Duration: 9.0ms | Allocations: 2476)
+Completed 200 OK in 16ms (Views: 12.4ms | ActiveRecord: 0.1ms | Allocations: 3142)
+
+
+Started POST "/articles/2/comments" for 146.111.195.30 at 2024-04-18 21:01:32 +0000
+Cannot render console from 146.111.195.30! Allowed networks: 127.0.0.0/127.255.255.255, ::1
+Processing by CommentsController#create as TURBO_STREAM
+  Parameters: {"authenticity_token"=>"[FILTERED]", "comment"=>{"commenter"=>"Michael Villavicencio", "body"=>"This article makes me think about the future and how I should prepare/"}, "commit"=>"Create Comment", "article_id"=>"2"}
+  [1m[36mArticle Load (0.1ms)[0m  [1m[34mSELECT "articles".* FROM "articles" WHERE "articles"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/comments_controller.rb:3:in `create'
+  [1m[36mTRANSACTION (2.3ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/comments_controller.rb:4:in `create'
+  [1m[36mComment Create (5.2ms)[0m  [1m[32mINSERT INTO "comments" ("commenter", "body", "article_id", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?) RETURNING "id"[0m  [["commenter", "Michael Villavicencio"], ["body", "This article makes me think about the future and how I should prepare/"], ["article_id", 2], ["created_at", "2024-04-18 21:01:32.385074"], ["updated_at", "2024-04-18 21:01:32.385074"]]
+  ↳ app/controllers/comments_controller.rb:4:in `create'
+  [1m[36mTRANSACTION (2.1ms)[0m  [1m[36mcommit transaction[0m
+  ↳ app/controllers/comments_controller.rb:4:in `create'
+Redirected to https://ce91869187c447819ee1ffb107d7c008.vfs.cloud9.us-east-1.amazonaws.com/articles/2
+Completed 302 Found in 17ms (ActiveRecord: 9.6ms | Allocations: 2922)
+
+
+Started GET "/articles/2" for 146.111.195.30 at 2024-04-18 21:01:32 +0000
+Cannot render console from 146.111.195.30! Allowed networks: 127.0.0.0/127.255.255.255, ::1
+Processing by ArticlesController#show as TURBO_STREAM
+  Parameters: {"id"=>"2"}
+  [1m[36mArticle Load (0.1ms)[0m  [1m[34mSELECT "articles".* FROM "articles" WHERE "articles"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/articles_controller.rb:7:in `show'
+  Rendering layout layouts/application.html.erb
+  Rendering articles/show.html.erb within layouts/application
+  [1m[36mComment Load (0.1ms)[0m  [1m[34mSELECT "comments".* FROM "comments" WHERE "comments"."article_id" = ?[0m  [["article_id", 2]]
+  ↳ app/views/articles/show.html.erb:15
+  Rendered articles/show.html.erb within layouts/application (Duration: 5.3ms | Allocations: 1493)
+  Rendered layout layouts/application.html.erb (Duration: 9.9ms | Allocations: 2602)
+Completed 200 OK in 16ms (Views: 12.6ms | ActiveRecord: 0.2ms | Allocations: 3251)
+
+
